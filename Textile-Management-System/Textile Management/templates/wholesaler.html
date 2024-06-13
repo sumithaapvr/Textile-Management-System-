@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textile Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='frpage.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Textile Central</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/wholesaler">Wholesaler</a></li>
+            <li><a href="/user">Login</a></li>
+        </ul>
+    </nav>
+<div class="container1">
+  <header>
+      <h1>Wholesaler Details</h1>
+  </header>
+  <main>
+      <section class="buttons">
+          <a href="/dealer"><button id="addButton">Add</button></a>
+         <a href="/dealers"><button id="viewButton">View</button></a>
+
+      </section>
+      <section class="content">
+          <h2>Welcome to the Wholesaler Management Page</h2>
+          <p>Here you can manage your wholesalers. Use the buttons above to add a new wholesaler or view the list of current wholesalers.</p>
+      </section>
+  </main>
+</div>
+<div class="container3">
+    <img src="{{ url_for('static', filename='images/txname.png') }}" >
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Textile Central is proudly committed to the values of <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technical innovation, environmental sustainability, <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;employment creation and labour welfare.</p><br><br>
+    <h3>Location:Coimbatore-641001,Tamilnadu,India</h3>
+    <h3>Contact no:90909-08256</h3>
+    <h3>Mail Id:txcentral@gmail.com</h3><br>
+</div>
+</body>
+</html>

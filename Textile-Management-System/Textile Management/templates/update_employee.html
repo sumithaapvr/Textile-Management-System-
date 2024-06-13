@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <form action="/employees/{{ employee.id }}/update" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ employee.name }}"><br>
+        <label for="roll">Role:</label><br>
+        <input type="text" id="roll" name="roll" value="{{ employee.roll }}"><br>
+        <label for="experience">Experience:</label><br>
+        <input type="text" id="experience" name="experience" value="{{ employee.experience }}"><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" id="phone" name="phone" value="{{ employee.phone }}"><br>
+        <label for="salary">Salary:</label><br>
+        <input type="text" id="salary" name="salary" value="{{ employee.salary }}"><br>
+        <label for="date_of_join">Date of Joining:</label><br>
+        <input type="text" id="date_of_join" name="date_of_join" value="{{ employee.date_of_join }}"><br><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

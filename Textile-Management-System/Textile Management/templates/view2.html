@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* CSS for the action buttons */
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .update-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .update-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dealer Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dealer Name</th>
+                <th>Location</th>
+                <th>Ti-up</th>
+                <th>Phone Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dealer in dealers %}
+            <tr>
+                <td>{{ dealer.id }}</td>
+                <td>{{ dealer.name }}</td>
+                <td>{{ dealer.location }}</td>
+                <td>{{ dealer.ti_up }}</td>
+                <td>{{ dealer.phone_number }}</td>
+                <td>
+                    <button class="update-btn" data-dealer-id="{{ dealer.id }}">Update</button>
+                    <button class="delete-btn" data-dealer-id="{{ dealer.id }}">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        const updateButtons = document.querySelectorAll('.update-btn');
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        updateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const dealerId = button.getAttribute('data-dealer-id');
+                // Redirect to the update page with the dealer ID in the URL
+                window.location.href = `/dealers/${dealerId}/update`;
+            });
+        });
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const dealerId = button.getAttribute('data-dealer-id');
+                // Send a DELETE request to the server to delete the dealer
+                fetch(`/dealers/${dealerId}/delete`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Reload the page after deletion
+                        window.location.reload();
+                    } else {
+                        console.error('Failed to delete dealer');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error deleting dealer:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

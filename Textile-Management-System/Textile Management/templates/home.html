@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textile Management System</title>
+</head>
+<style>
+    body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  nav {
+    background-color: #34495e;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 0;
+  }
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  nav ul a:hover{
+    color: red;
+  }
+  header {
+    background-image: url('static/images/fb2.jpg'); /* replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  header p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  .btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+  }
+  .container {
+    padding: 2rem;
+    text-align: center;
+  }
+  .container h2 {
+    color: #34495e;
+  }
+    /* Values section styling */
+    .container2 {
+      padding: 2rem;
+      color:black;
+    }
+    .container2 h2 {
+      color: #34495e;
+  }
+    
+    .container2 p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    
+    /* Footer section styling */
+   .footer {
+      background-color:grey;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .footer img {
+      width: 200px;
+      margin: 10px;
+      margin-left: 100px;
+    }
+    
+    .footer p,
+    .footer h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      flex-basis: 100%;
+      text-align: right;
+    }
+    
+    .footer h3 {
+      font-size: 20px;
+      text-align: left;
+    }
+    
+    @media (min-width: 768px) {
+      .footer p,
+      .footer h3 {
+        flex-basis: auto;
+        text-align: left;
+      }
+    }
+    
+    /* Additional Styles */
+    .footer h2:first-child {
+      font-size: 26px;
+      color: #333;
+      text-shadow: none;
+      margin-bottom: 30px;
+    }
+    
+    .footer h1 {
+      color: #fff;
+      font-size: 32px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">Textile Central</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/wholesaler">Wholesaler</a></li>
+            <li><a href="/user">Login</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div>
+            <h1>Welcome to Textile Central</h1>
+            <p>Your one-stop destination for premium textiles</p>
+            <a href="#" class="btn">Explore Now</a>
+        </div>
+    </header>
+<div class="container">
+    <h2>About Us</h2>
+    <p>Textile Central is committed to providing the finest quality textiles to our customers. Explore our wide range of products and discover the perfect fabric for your needs.</p>
+</div>
+<div class="container2">
+    <center><h2>Our Values</h2></center>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Textile Central, we are driven by the need to be environmentally sustainable, to be socially conscious and to empower our primarily female workforce.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are proud to operate in the labour-intensive textiles industry.We have the opportunity to create thousands of jobs for Indians at the bottom of the pyramid.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These women and men are able to transition from the unorganised sector to corporate factory work, where they enjoy benefits such as excellent health insurance and free college-level courses.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to our own wind mills and solar panels, we are able to sustainably power the majority of our operations through renewable energy.”</p>
+    <p style="text-align: right;">– Late Manikam Ramaswami (Ex- Chairman & MD, Textile Central)</p> 
+</div>
+<div class="footer">
+    <img src="{{ url_for('static', filename='images/txname.png') }}" >
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Textile Central is proudly committed to the values of <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technical innovation, environmental sustainability, <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;employment creation and labour welfare.</p><br><br>
+    <h3>Location:Coimbatore-641001,Tamilnadu,India</h3>
+    <h3>Contact no:90909-08256</h3>
+    <h3>Mail Id:txcentral@gmail.com</h3><br>
+</div>
+</body>
+</html>

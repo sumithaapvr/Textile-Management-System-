@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textile Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+</head>
+<body>
+  <nav>
+    <div class="logo">Textile Central</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/employee">Employee</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/wholesaler">Wholesaler</a></li>
+        <li><a href="/user">Login</a></li>
+    </ul>
+</nav>
+<div class="container1">
+  <img src="{{ url_for('static', filename='images/yarn.jpeg') }}">
+  <div class="content">
+    <h2>YARN PRODUCTS</h2>
+    <p>Textile Central Mills Ltd is well known for its superior quality yarns. Our yarn range stands tall in terms of both quality and durability.</p>
+    <h2>Technology</h2>
+    <ul class="u1">
+      <li>We use the latest machines from LMW, Rieter and Trutzschler.</li>
+      <li>Ring spun - Carded and Combed, Compact and Siro Compact ( Eli twist), Vortex Yarn, TFO Yarn, Open End, Air jet and Slub.</li>
+    </ul>
+    <section class="buttons">
+      <a href="/yarn"><button id="addButton">Add</button></a>
+      <a href="/yarn_details"><button id="viewButton">View</button></a>
+  </section>
+    <h2>Yarn Count</h2>
+    <ul>
+      <li>OE - Ne 6's to 30's</li>
+      <li>RY - Ne 10s to 120s</li>
+      <li>DY - Ne 6/2 to 120/2s</li>
+      <li>Vortex - Ne 14s- Ne 60s</li>
+      <li>Melange RY - Ne 20s - Ne 50s</li>
+      <li>Melange OE - Ne 8s - Ne 30s</li>
+    </ul>
+    <p>98% of the production is exported either as direct export or value added fabrics to various countries across the globe.</p>
+  </div>
+</div>
+<div class="container1">
+  <img src="{{ url_for('static', filename='images/fab.jpeg') }}" style="height: 600px;">
+  <div class="content">
+    <h2>Cotton Fabric PRODUCTS</h2>
+    <p>We specialize in offering superior quality woven and knitted fabrics in greige and dyed form.</p>
+    <h2>Woven Fabrics: Greige and Finished</h2>
+    <ul class="u1">
+      <li>The variety of fabric weave includes Plain, Twill, Drill, Gabardine, Sateen, Satin, Stripe Sateen</li>
+      <li>Dobby design, Rib stop, Herringbone and Oxford weave and equipped with the most modern Air-jet looms.</li>
+      <li>Loyal Group produces fabrics in widths ranging from 50 inches to 134 inches with 450 Air-Jet looms with the production of 200,000 meters/day.</li>
+    </ul>
+    <section class="buttons">
+      <a href="/fabric"><button id="addButton">Add</button></a>
+     <a href="/fabric_details"><button id="viewButton">View</button></a>
+  </section>
+    <h2>TYPE OF FABRICS</h2>
+    <ul>
+      <li>100% COTTON* and 100% POLYESTER**</li>
+      <li>COTTON* : POLYESTER** BLENDS</li>
+      <li>COTTON* : MODAL / TENCEL BLENDS</li>
+      <li>Elastane Products in above compositions 100% VISCOSE</li>
+      <li>* Cotton offered in Conventional, BCI, organic, PIMA, GIZA, Australian,</li>
+    </ul>
+  </div>
+  </div>
+  <div class="container1">
+    <img src="{{ url_for('static', filename='images/ht.jpeg') }}" style="height: 500px;">
+    <div class="content">
+      <h2>HOME TEXTILES</h2>
+      <p>Textile Central Mills Ltd is well known for its superior quality yarns. Our yarn range stands tall in terms of both quality and durability.</p>
+      <h2>About</h2>
+      <ul class="u1">
+        <li>Thread counts from TC 300 to TC 1200 of Plain Sateen, Stripe Sateen, Percale, Dobby and</li>
+        <li>Jacquard design fabrics from Egyptian, Pima and Indian cotton.</li>
+      </ul>
+      <section class="buttons">
+        <a href="/home2"><button id="addButton">Add</button></a>
+        <a href="/products"><button id="viewButton">View</button></a>
+    </section>
+      <h2>TYPE OF Products</h2>
+      <ul>
+        <li>SPECIAL STITCHES - Merrowing, Picotting, Double Needle, Self Hem, Self piping, Reverse Hem, Reverse piping and Jacquard Hem.</li>
+        <li>SPECIAL FINISHES - Down proof, Crease resistant, Calendaring, Silicon finish and Bio-polish finish.</li>
+        <li>SHOPPER BAGS - Loyal produces 3.5 million pieces of shopper bags per annum and is supplying to the UK and the USA.</li>
+      </ul>
+    </div>
+    </div>
+    <div class="container3">
+      <img src="{{ url_for('static', filename='images/txname.png') }}" >
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Textile Central is proudly committed to the values of <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technical innovation, environmental sustainability, <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;employment creation and labour welfare.</p><br><br>
+      <h3>Location:Coimbatore-641001,Tamilnadu,India</h3>
+      <h3>Contact no:90909-08256</h3>
+      <h3>Mail Id:txcentral@gmail.com</h3><br>
+  </div>
+</body>
+</html>

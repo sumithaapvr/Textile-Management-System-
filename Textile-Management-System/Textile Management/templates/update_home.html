@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="/products/{{ product.productId }}/update" method="POST">
+        <h2>Update Product</h2>
+        <label for="name">Product Name:</label>
+        <input type="text" id="productName" name="productName" value="{{product.productName }}">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" value="{{ product.category }}">
+        <label for="material">Material:</label>
+        <input type="text" id="material" name="material" value="{{ product.material }}">
+        <label for="size">Size:</label>
+        <input type="text" id="size" name="size" value="{{ product.size }}">
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" value="{{ product.color }}">
+        <label for="design">Design:</label>
+        <input type="text" id="design" name="design" value="{{ product.design }}">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="{{ product.price }}">
+        <label for="stock_quantity">Stock Quantity:</label>
+        <input type="text" id="stock_quantity" name="stockQuantity" value="{{ product.stockQuantity }}">
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

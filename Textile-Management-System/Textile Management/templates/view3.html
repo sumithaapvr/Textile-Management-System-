@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarn Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* CSS for the action buttons */
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .update-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .update-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Yarn Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Thread count</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Thickness</th>
+                <th>Length</th>
+                <th>Weight</th>
+                <th>Unit Price</th>
+                <th>Total production</th>
+                <th>Available stock</th>
+                <th>Date of manufacture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for yarn in yarn_details %}
+            <tr>
+                <td>{{ yarn.id }}</td>
+                <td>{{ yarn.thread_count }}</td>
+                <td>{{ yarn.material }}</td>
+                <td>{{ yarn.color }}</td>
+                <td>{{ yarn.thickness }}</td>
+                <td>{{ yarn.length }}</td>
+                <td>{{ yarn.weight }}</td>
+                <td>{{ yarn.unit_price }}</td>
+                <td>{{ yarn.total_production }}</td>
+                <td>{{ yarn.available_stock }}</td>
+                <td>{{ yarn.date_of_manufacture }}</td>
+                <td>
+                    <button class="update-btn" data-yarn-id="{{ yarn.id }}">Update</button>
+                    <button class="delete-btn" data-yarn-id="{{ yarn.id }}">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        const updateButtons = document.querySelectorAll('.update-btn');
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        updateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const yarnId = button.getAttribute('data-yarn-id');
+                window.location.href = `/yarn_details/${yarnId}/update`;
+            });
+        });
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const yarnId = button.getAttribute('data-yarn-id');
+                if (confirm("Are you sure you want to delete this yarn?")) {
+                    fetch(`/yarn_details/${yarnId}/delete`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.reload();
+                        } else {
+                            console.error('Failed to delete yarn');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error deleting yarn:', error);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

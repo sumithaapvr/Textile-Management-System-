@@ -1,0 +1,135 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  nav {
+    background-color: #34495e;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 0;
+  }
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  nav ul a:hover{
+    color: red;
+  }
+    
+  .container1 {
+    font-family: Arial, sans-serif;
+    max-width: 95%;
+    margin: 10px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1A2130;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2em;
+    color: #F0EBE3;
+  }
+  
+  /* Main content */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .content h2 {
+    font-size: 1.5em;
+    color: #F0EBE3;
+  }
+  
+  .content p {
+    font-size: 1em;
+    color: #F0EBE3;
+  }
+  .container3{
+      background-color: grey;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .container3 img {
+      width: 200px;
+      margin: 10px;
+      margin-left: 100px;
+    }
+    
+    .container3 p,
+    .container3 h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      flex-basis: 100%;
+      text-align: right;
+    }
+    
+    .container3 h3 {
+      font-size: 20px;
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      .container3 p,
+      .container3 h3 {
+        flex-basis: auto;
+        text-align: left;
+      }
+    }
